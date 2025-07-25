@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: bold;
+	font-style: normal;
+	/* background-color: #e5e5f7; */
+opacity: 0.8;
+background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#dcf744 0.5px, #e5e5f7 0.5px);
+background-size: 20px 20px;
+background-position: 0 0,10px 10px;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.wrapper-swiftfood {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f7f1e3;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.input-group {
+  position: relative;
+  margin: 30px 0;
+  font-family: sans-serif;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px 15px 10px 15px;
+  display: block;
+  width: 470px;
+  border: none;
+  border-bottom: 3px solid #422800;
+  background: #ffbeb6;
+  height: 30px;
+}
+
+input:focus { outline: none }
+
+label {
+  color: #999;
+  font-size: 16px;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all }
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 12px;
+  color: #5264AE }
+
+/* optional: add underline animation */
+.input-group::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: #5264AE;
+  transition: 0.2s ease all }
+
+input:focus ~ .input-group::after { width: 100% }
+
+.montant-swiftfood, p { margin:25px 0 }
+
+.input-swiftfood::placeholder{
+	font-weight: bold;
+	color:#fbeee0
+}
+
+/* CSS */
+#swiftfoodPay {
+  background-color: #fbeee0;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0 27px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation }
+
+#swiftfoodPay:hover { background-color: #fff7e5 }
+
+#swiftfoodPay:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  #swiftfoodPay{
+  min-width: 130px;
+  height: 45px;
+  }
+}
