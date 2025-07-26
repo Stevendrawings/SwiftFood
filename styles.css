@@ -122,15 +122,14 @@ input:focus ~ .input-group::after { width: 100% }
 	color:#fbeee0 }
 
 .content-ingredient {
-	display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    gap: 15px;
-    top: 160px;
-} 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  gap: 40px;
+  top: 160px } 
 
 /* CSS */
 #swiftfoodPay {
@@ -160,7 +159,29 @@ input:focus ~ .input-group::after { width: 100% }
 
 @media (min-width: 768px) {
   #swiftfoodPay{
-  min-width: 130px;
-  height: 45px;
+    min-width: 130px;
+    height: 45px;
   }
+}
+
+.drink-swiftfood, 
+.frite-swiftfood, 
+.ice-swiftfood, 
+.bigMenu-swiftfood, 
+.warterMelon-swiftfood { width: 45px }
+
+.cell-food {
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 20px }
+
+.cell-food:nth-child(1) {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 35px; 
+  padding: 25px }
+
+.cell-food:active {
+  background-color: #b8dfff;
+  outline: 3px solid #03A9F4;
 }
