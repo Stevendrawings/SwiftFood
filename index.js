@@ -31,7 +31,7 @@ let commande = {
     }
 }
 
-const imgBurger = new Image(60)
+const imgBurger = new Image(35)
 const boisson = new Image(80)
 const frite = new Image(80)
 const glace = new Image(80)
@@ -76,6 +76,22 @@ createElementIce.appendChild(glace)
 createElementBigMenu.appendChild(bigMenu)
 createElementWaterMelon.appendChild(waterMelon)
 
-
 const target_burger = document.querySelector('.burger-swiftfood');
+const target_drink = document.querySelector('.drink-swiftfood');
+const target_frite = document.querySelector('.frite-swiftfood'); 
+const target_ice = document.querySelector('.ice-swiftfood'); 
+const target_bigMenu = document.querySelector('.bigMenu-swiftfood'); 
+const target_waterMelon = document.querySelector('.warterMelon-swiftfood');
+
+const tab = [target_burger, target_drink, target_frite, target_ice, target_bigMenu, target_waterMelon]
+
+for(let i = 0; i < tab.length; i = i + 1){
+    const divAlls = document.querySelectorAll('.content-ingredient div')
+    divAlls[i].classList.add('cell-food')
+    tab[i].addEventListener('click', function(){
+        console.log(tab[i])
+    })
+}
+
+
 
