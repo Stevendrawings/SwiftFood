@@ -49,18 +49,16 @@ glace.classList.add("ice-swiftfood");
 bigMenu.classList.add("bigMenu-swiftfood"); 
 waterMelon.classList.add("warterMelon-swiftfood");
 
-function createIngredien(para_tag){
-    return document.createElement(para_tag)
-}
+function createIngredien(para_tag){ return document.createElement(para_tag) }
 
 const targetContentIngredient = document.querySelector('.content-ingredient');
 
-const createElementBurger = createIngredien("div");
-const createElementDrink = createIngredien("div");
-const createElementfrite = createIngredien("div");
-const createElementIce = createIngredien("div");
-const createElementBigMenu = createIngredien("div");
-const createElementWaterMelon = createIngredien("div");
+const createElementBurger = createIngredien("div")
+const createElementDrink = createIngredien("div")
+const createElementfrite = createIngredien("div")
+const createElementIce = createIngredien("div")
+const createElementBigMenu = createIngredien("div")
+const createElementWaterMelon = createIngredien("div")
 
 targetContentIngredient.appendChild(createElementBurger)
 targetContentIngredient.appendChild(createElementDrink)
@@ -86,12 +84,29 @@ const target_waterMelon = document.querySelector('.warterMelon-swiftfood');
 const tab = [target_burger, target_drink, target_frite, target_ice, target_bigMenu, target_waterMelon]
 
 for(let i = 0; i < tab.length; i = i + 1){
-    const divAlls = document.querySelectorAll('.content-ingredient div')
+
+    const divAlls = document.querySelectorAll('.content-ingredient div');
     divAlls[i].classList.add('cell-food')
-    tab[i].addEventListener('click', function(){
-        console.log(tab[i])
-    })
+    document.querySelectorAll('.cell-food');
+
+    function foodz(){ 
+        divAlls[i].classList.replace('cell-food', 'active');
+        // "getElementsByClassName" est un Compteur de class dans le DOM 
+        // cet methode comptera toute les class avec l'evenement click ! 
+        const nombreElements = document.getElementsByClassName("active");
+        // Cet condition permet de fixer une limite à ne pas dépasser.
+        if(nombreElements.length < 6){
+            console.log("active"); 
+            console.log(divAlls[i])
+        } if(divAlls[i].className > -1){
+            return false;
+        }
+    }
+    const btn_foodz = document.querySelectorAll('.cell-food')[i];
+    btn_foodz.addEventListener('click', foodz, true)
 }
+            
+        
 
 
 
