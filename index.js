@@ -88,6 +88,8 @@ for(let i = 0; i < tab.length; i = i + 1){
     const divAlls = document.querySelectorAll('.content-ingredient div');
     divAlls[i].classList.add('cell-food')
     document.querySelectorAll('.cell-food');
+    let clickCount = 0;
+    const maxClicks = 1;
 
     function foodz(){ 
         divAlls[i].classList.replace('cell-food', 'active');
@@ -95,15 +97,18 @@ for(let i = 0; i < tab.length; i = i + 1){
         // cet methode comptera toute les class avec l'evenement click ! 
         const nombreElements = document.getElementsByClassName("active");
         // Cet condition permet de fixer une limite à ne pas dépasser.
-        if(nombreElements.length < 6){
-            console.log("active"); 
-            console.log(divAlls[i])
-        } if(divAlls[i].className > -1){
-            return false;
+        // avec la variables maxClicks.
+        if (clickCount < maxClicks) {
+        clickCount++;
+        console.log('Clic n°' + clickCount);
+        console.log(divAlls[i])
+        // Ajoutez ici le code à exécuter au clic
         }
     }
+
     const btn_foodz = document.querySelectorAll('.cell-food')[i];
-    btn_foodz.addEventListener('click', foodz, true)
+    btn_foodz.addEventListener('click', foodz, true);
+    
 }
             
         
