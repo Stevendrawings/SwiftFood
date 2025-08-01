@@ -78,12 +78,11 @@ input {
   font-size: 16px;
   padding: 10px 15px 10px 15px;
   display: block;
-  width: 470px;
+  width: 680px;
   border: none;
   border-bottom: 3px solid #422800;
   background: #ffbeb6;
-  height: 30px;
-}
+  height: 40px }
 
 input:focus { outline: none }
 
@@ -181,7 +180,16 @@ input:focus ~ .input-group::after { width: 100% }
   width: 35px; 
   padding: 25px }
 
-.cell-food:active {
+.active:nth-child(1){
   background-color: #b8dfff;
   outline: 3px solid #03A9F4;
-}
+  border-radius: 20px;
+  width: 35px; 
+  padding: 25px }
+
+.active {
+  border-radius: 20px;
+  padding: 20px;
+  background-color: #b8dfff;
+  outline: 3px solid #03A9F4;}
+
