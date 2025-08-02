@@ -78,10 +78,16 @@ const tab = [target_burger, target_drink, target_frite, target_ice, target_bigMe
 
 for(let i = 0; i < tab.length; i = i + 1){
 
-    const counterSpan = document.createElement("span")
     const divAlls = document.querySelectorAll('.content-ingredient div');
-    divAlls[i].classList.add('cell-food')
+    divAlls[i].classList.add('cell-food');
     const whiteCard = document.querySelectorAll('.cell-food');
+
+    const counterSpan = document.createElement("span")
+
+    whiteCard[i].appendChild(counterSpan)
+
+    const target_counterFoodz = document.querySelectorAll('span');
+    console.log(target_counterFoodz)
 
     createElementBurger.appendChild(imgBurger)
     createElementDrink.appendChild(boisson)
@@ -89,9 +95,6 @@ for(let i = 0; i < tab.length; i = i + 1){
     createElementIce.appendChild(glace)
     createElementBigMenu.appendChild(bigMenu)
     createElementWaterMelon.appendChild(waterMelon)
-
-    whiteCard[i].appendChild(counterSpan)
-    counterSpan.classList.add("numberFoodz")
 
     let clickCount = 0;
     const maxClicks = 6;
