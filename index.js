@@ -67,13 +67,6 @@ targetContentIngredient.appendChild(createElementIce)
 targetContentIngredient.appendChild(createElementBigMenu)
 targetContentIngredient.appendChild(createElementWaterMelon)
 
-createElementBurger.appendChild(imgBurger)
-createElementDrink.appendChild(boisson)
-createElementfrite.appendChild(frite)
-createElementIce.appendChild(glace)
-createElementBigMenu.appendChild(bigMenu)
-createElementWaterMelon.appendChild(waterMelon)
-
 const target_burger = document.querySelector('.burger-swiftfood');
 const target_drink = document.querySelector('.drink-swiftfood');
 const target_frite = document.querySelector('.frite-swiftfood'); 
@@ -85,11 +78,25 @@ const tab = [target_burger, target_drink, target_frite, target_ice, target_bigMe
 
 for(let i = 0; i < tab.length; i = i + 1){
 
+    const counterSpan = document.createElement("span")
     const divAlls = document.querySelectorAll('.content-ingredient div');
     divAlls[i].classList.add('cell-food')
-    document.querySelectorAll('.cell-food');
+    const whiteCard = document.querySelectorAll('.cell-food');
+
+    createElementBurger.appendChild(imgBurger)
+    createElementDrink.appendChild(boisson)
+    createElementfrite.appendChild(frite)
+    createElementIce.appendChild(glace)
+    createElementBigMenu.appendChild(bigMenu)
+    createElementWaterMelon.appendChild(waterMelon)
+
+    whiteCard[i].appendChild(counterSpan)
+    counterSpan.classList.add("numberFoodz")
+
     let clickCount = 0;
-    const maxClicks = 1;
+    const maxClicks = 6;
+
+    console.log(Math.floor(Math.random() * tab.length))
 
     function foodz(){ 
         divAlls[i].classList.replace('cell-food', 'active');
@@ -102,7 +109,7 @@ for(let i = 0; i < tab.length; i = i + 1){
         clickCount++;
         console.log('Clic n°' + clickCount);
         console.log(divAlls[i])
-        // Ajoutez ici le code à exécuter au clic
+        // Ajoutez ici le code à exécuter au click
         }
     }
 
