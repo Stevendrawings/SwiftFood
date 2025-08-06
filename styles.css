@@ -1,0 +1,16 @@
+
+.wrapper-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.block {
+    background-color: deepskyblue;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
