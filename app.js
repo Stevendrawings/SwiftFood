@@ -28,7 +28,7 @@ let imgWaterMelon = new Image(55);
 console.log(imgBurger, imgFrite, imgBoisson, imgMenuXXL, imgGlace, imgWaterMelon)
 
 const btn = document.querySelectorAll(".block")
-const p = document.querySelectorAll("p")
+const span = document.querySelectorAll("span")
 
 for(let i = 0; i < btn.length; i = i + 1){
 
@@ -53,7 +53,7 @@ console.log(quantitys)
 
     let count = 0;
     let indice = 1;
-    //p[i].innerText = "0";
+    span[i].innerText = "0";
 
 btn[i].addEventListener('click', function clikcord(){
     if(indice <= 6){ 
@@ -67,7 +67,7 @@ btn[i].addEventListener('click', function clikcord(){
 
     if(initVal <= 6){
         console.log("tab:", tab);
-        //p[i].innerText = tab[i]
+        span[i].innerText = tab[i]
         console.log("initVal:", initVal);
     } else { return false }
     });
