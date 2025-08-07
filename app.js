@@ -31,6 +31,7 @@ console.log(imgBurger, imgFrite, imgBoisson, imgMenuXXL, imgGlace, imgWaterMelon
 const btn = document.querySelectorAll(".block")
 const span = document.querySelectorAll("span")
 const quantitysor = document.getElementById("quantitysor");
+const contentDivParentFoodz = document.querySelector(".content-tag")
 
 for(let i = 0; i < btn.length; i = i + 1){
 
@@ -71,7 +72,12 @@ btn[i].addEventListener('click', function clikcord(){
         btn[i].classList.add("active")
         quantitysor.innerText = initVal;
         console.log("tab:", tab);
-        span[i].innerText = tab[i]
+        span[i].innerText = tab[i];
+        let listesFoodz = document.createElement("li")
+        contentDivParentFoodz.appendChild(listesFoodz)
+        const input_foodz = document.querySelector(".input")
+        contentDivParentFoodz.insertBefore(listesFoodz, input_foodz)
+        //input_foodz.style.display = "none";
         console.log("initVal:", initVal);
     } else { return false }
     });
