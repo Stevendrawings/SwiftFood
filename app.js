@@ -77,7 +77,7 @@ btn[i].addEventListener('click', function clikcord(){
         contentDivParentFoodz.appendChild(listesFoodz)
         const input_foodz = document.querySelector(".input")
         contentDivParentFoodz.insertBefore(listesFoodz, input_foodz)
-        //input_foodz.style.display = "none";
+        input_foodz.placeholder = "";
         console.log("initVal:", initVal);
     } else { return false }
     });
