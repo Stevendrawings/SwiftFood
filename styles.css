@@ -114,9 +114,7 @@ table {
   touch-action: manipulation;
 }
 
-.button-74:hover {
-  background-color: #fff;
-}
+.button-74:hover { background-color: #fff }
 
 .button-74:active {
   box-shadow: #422800 2px 2px 0 0;
@@ -142,7 +140,6 @@ table {
   width: 100%;
   position: static;
   height: 100px;
-  /* max-width: 240px; */
   margin: 0 auto;
 }
 
@@ -175,13 +172,33 @@ table {
 .coolinput input[type=text].input {
   padding: 11px 20px;
   font-size: 15px;
-  border: 2px #111111 solid;
+  border: none;
   border-radius: 10px;
   background: #ffefdb;
   height: 45px;
   font-weight: bold;
+  width: 100% }
+
+.coolinput input[type=text].input:focus { outline: none }
+
+
+.coolinput input[type=text].input::placeholder{
+  color: #bb9f7b;
 }
 
-.coolinput input[type=text].input:focus {
-  outline: none;
-}
+ul.content-tag { 
+  border: 2px solid #111111;
+  border-radius: 10px;
+  display: flex; 
+  align-items: center }
+
+ul.content-tag li {
+  list-style: none;
+  background-color: rgb(255 255 255);
+  padding: 10px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 5px;
+  border: 2px solid #422800;
+  height: 30px;
+  box-shadow: #422800 3px 2px 0 0; }
