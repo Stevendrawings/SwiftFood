@@ -11,6 +11,7 @@ const fastFoodz = {
 
 let tab = []; tab = Array(6).fill('')
 
+
 let imgBurger = new Image(40);
 let imgFrite = new Image(50);
 let imgBoisson = new Image(55);
@@ -66,6 +67,7 @@ btn[i].addEventListener('click', function clikcord(){
     + parseInt(Number(val)), count);  
 
     if(initVal <= 6){
+        btn[i].classList.add("active")
         console.log("tab:", tab);
         span[i].innerText = tab[i]
         console.log("initVal:", initVal);
