@@ -30,6 +30,7 @@ console.log(imgBurger, imgFrite, imgBoisson, imgMenuXXL, imgGlace, imgWaterMelon
 
 const btn = document.querySelectorAll(".block")
 const span = document.querySelectorAll("span")
+const quantitysor = document.getElementById("quantitysor");
 
 for(let i = 0; i < btn.length; i = i + 1){
 
@@ -68,6 +69,7 @@ btn[i].addEventListener('click', function clikcord(){
 
     if(initVal <= 6){
         btn[i].classList.add("active")
+        quantitysor.innerText = initVal;
         console.log("tab:", tab);
         span[i].innerText = tab[i]
         console.log("initVal:", initVal);
