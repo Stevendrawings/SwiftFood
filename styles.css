@@ -177,10 +177,9 @@ table {
   background: #ffefdb;
   height: 45px;
   font-weight: bold;
-  width: 100% }
+  width: 20% }
 
 .coolinput input[type=text].input:focus { outline: none }
-
 
 .coolinput input[type=text].input::placeholder{
   color: #bb9f7b;
@@ -190,7 +189,9 @@ ul.content-tag {
   border: 2px solid #111111;
   border-radius: 10px;
   display: flex; 
-  align-items: center }
+  align-items: center;
+  height: 72px;
+}
 
 ul.content-tag li {
   list-style: none;
