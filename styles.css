@@ -68,6 +68,7 @@ table {
 }
 
 .block {
+    cursor: pointer;
     background-color: #fff;
     color: white;
     margin:20px;
@@ -157,6 +158,7 @@ table {
   width: fit-content }
 
 .active {
+  cursor: pointer;
   background-color: #c5eaff;
   color: white;
   margin: 20px;
