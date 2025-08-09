@@ -54,8 +54,6 @@ btn[i].addEventListener('click', function clikcord(){
     // 0 + 1 + 2 + 3 + 4         
     const initVal = tab.reduce((acc, val) => acc + parseInt(Number(val)), count);  
 
-    console.log(tab[i])
-
     if(initVal <= 6){
         btn[i].classList.add("active")
         quantitysor.innerText = initVal;
@@ -75,6 +73,18 @@ btn[i].addEventListener('click', function clikcord(){
         ];
 
         console.log(listesFoodz.innerText = tabObj_nom[i])
+        const express_name = tabObj_nom[i]
+        
+        switch (express_name){
+            case "burger": listesFoodz.style.backgroundColor = "#ff7675"; break;
+            case "frite": listesFoodz.style.backgroundColor = "#ffb326"; break;
+            case "boisson": listesFoodz.style.backgroundColor = "#00cec9"; break;
+            case "Menu XXL": listesFoodz.style.backgroundColor = "#575fcf"; break; 
+            case "glace": listesFoodz.style.backgroundColor = "#fd79a8"; break;
+            case "Water melon": listesFoodz.style.backgroundColor = "#4bcffa"; break; 
+            default:
+                console.log(`Sorry, we are out of ${express_name}.`);
+        }
 
         contentDivParentFoodz.insertBefore(listesFoodz, input_foodz)
         input_foodz.style.display = "none";
