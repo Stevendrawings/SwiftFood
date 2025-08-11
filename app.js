@@ -9,7 +9,8 @@ const fastFoodz = {
     waterMelon:{ nom: "Water melon", id: 6, img: "img/watermelon.png", price: 3.50 }
 }
 
-let tab = []; tab = Array(6).fill('')
+let tab = []; 
+    tab = Array(5).fill('')
 
 let imgBurger = new Image(40);
 let imgFrite = new Image(50);
@@ -27,20 +28,29 @@ const span = document.querySelectorAll("span")
 const quantitysor = document.getElementById("quantitysor");
 const contentDivParentFoodz = document.querySelector(".content-tag")
 
+    const tableur = [];
+
+        const tabObj_nom = [
+        fastFoodz.burger.nom, 
+        fastFoodz.frite.nom,
+        fastFoodz.boisson.nom, 
+        fastFoodz.menuXXL.nom,
+        fastFoodz.glace.nom, 
+        fastFoodz.waterMelon.nom
+    ];
+
+    
 for(let i = 0; i < btn.length; i = i + 1){
 
-    btn[0].appendChild(imgBurger); btn[1].appendChild(imgFrite)
-    btn[2].appendChild(imgBoisson); btn[3].appendChild(imgMenuXXL)
-    btn[4].appendChild(imgGlace); btn[5].appendChild(imgWaterMelon)
-    
-const tabObj_id = [
-    fastFoodz.burger.id, fastFoodz.frite.id,
-    fastFoodz.boisson.id, fastFoodz.menuXXL.id,
-    fastFoodz.glace.id, fastFoodz.waterMelon.id
-];
+    btn[0].appendChild(imgBurger); 
+    btn[1].appendChild(imgFrite)
+    btn[2].appendChild(imgBoisson); 
+    btn[3].appendChild(imgMenuXXL)
+    btn[4].appendChild(imgGlace); 
+    btn[5].appendChild(imgWaterMelon)
 
-const quantitys = Math.floor(Math.random() * tabObj_id.length)
-console.log(quantitys)
+    const quantitys = Math.floor(Math.random() * tabObj_nom.length)
+    tableur.splice(i, 1, tabObj_nom[quantitys]);
 
     let count = 0;
     let indice = 1;
@@ -55,45 +65,39 @@ btn[i].addEventListener('click', function clikcord(){
     const initVal = tab.reduce((acc, val) => acc + parseInt(Number(val)), count);  
 
     if(initVal <= 6){
+
         btn[i].classList.add("active")
         quantitysor.innerText = initVal;
-        console.log("tab:", tab);
+        "tab:", tab;
         span[i].innerText = tab[i];
         let listesFoodz = document.createElement("li")
         contentDivParentFoodz.appendChild(listesFoodz)
         const input_foodz = document.querySelector(".input"); 
         const target_li_foodz = document.querySelectorAll('ul.content-tag li')
         const valFoodz = Object.values(target_li_foodz);
-        listesFoodz.classList.add("listefoodz")
+        listesFoodz.classList.add("listefoodz");
 
-        const tabObj_nom = [
-            fastFoodz.burger.nom, fastFoodz.frite.nom,
-            fastFoodz.boisson.nom, fastFoodz.menuXXL.nom,
-            fastFoodz.glace.nom, fastFoodz.waterMelon.nom
-        ];
-
-        console.log(listesFoodz.innerText = tabObj_nom[i])
-        const express_name = tabObj_nom[i]
+        listesFoodz.innerText = tabObj_nom[i];
         
-        switch (express_name){
+        switch (tabObj_nom[i]){
             case "burger": listesFoodz.style.backgroundColor = "#ff7675"; break;
             case "frite": listesFoodz.style.backgroundColor = "#ffb326"; break;
             case "boisson": listesFoodz.style.backgroundColor = "#00cec9"; break;
             case "Menu XXL": listesFoodz.style.backgroundColor = "#575fcf"; break; 
             case "glace": listesFoodz.style.backgroundColor = "#fd79a8"; break;
             case "Water melon": listesFoodz.style.backgroundColor = "#4bcffa"; break; 
-            default:
-                console.log(`Sorry, we are out of ${express_name}.`);
-        }
+            default: console.log(`Sorry, we are out of ${tabObj_nom[i]}.`);
+        };
 
+        console.log(tabObj_nom[i])
+   
         contentDivParentFoodz.insertBefore(listesFoodz, input_foodz)
         input_foodz.style.display = "none";
-        console.log("initVal:", initVal);
-    } else { return false }
+        "initVal:", initVal;
+        } else { return false }
+
     });
+    
+    console.log(tableur)
+
 }
-
-
-
-
-
