@@ -9,8 +9,8 @@ const fastFoodz = {
     waterMelon:{ nom: "Water melon", id: 6, img: "img/watermelon.png", price: 3.50 }
 }
 
-let tab = []; 
-    tab = Array(5).fill('')
+let tab = []; tab = Array(5).fill('');
+let tabs = [];
 
 let imgBurger = new Image(40);
 let imgFrite = new Image(50);
@@ -28,9 +28,12 @@ const span = document.querySelectorAll("span")
 const quantitysor = document.getElementById("quantitysor");
 const contentDivParentFoodz = document.querySelector(".content-tag")
 
-    const tableur = [];
+const btnResultat = document.querySelector(".button-74")
 
-        const tabObj_nom = [
+    const tableur = [];
+            let counter = 0;
+
+    const tabObj_nom = [
         fastFoodz.burger.nom, 
         fastFoodz.frite.nom,
         fastFoodz.boisson.nom, 
@@ -39,7 +42,6 @@ const contentDivParentFoodz = document.querySelector(".content-tag")
         fastFoodz.waterMelon.nom
     ];
 
-    
 for(let i = 0; i < btn.length; i = i + 1){
 
     btn[0].appendChild(imgBurger); 
@@ -77,8 +79,6 @@ btn[i].addEventListener('click', function clikcord(){
         const valFoodz = Object.values(target_li_foodz);
         listesFoodz.classList.add("listefoodz");
 
-        listesFoodz.innerText = tabObj_nom[i];
-        
         switch (tabObj_nom[i]){
             case "burger": listesFoodz.style.backgroundColor = "#ff7675"; break;
             case "frite": listesFoodz.style.backgroundColor = "#ffb326"; break;
@@ -89,15 +89,29 @@ btn[i].addEventListener('click', function clikcord(){
             default: console.log(`Sorry, we are out of ${tabObj_nom[i]}.`);
         };
 
-        console.log(tabObj_nom[i])
-   
-        contentDivParentFoodz.insertBefore(listesFoodz, input_foodz)
         input_foodz.style.display = "none";
+        tabs.push(tabObj_nom[i])
+
+        let toutesBonnes = true;
+
+        for (let u = 0; u < tableur.length; u = u + 1) {
+
+            // Drapeau pour suivre si tout est correct
+                listesFoodz.innerText = tabObj_nom[i];
+            if(tableur[u] == tabs[u]){
+                console.log(tableur[u], tabs[u], "Bonne réponse");
+            } else {
+                console.log(tableur[u], tabs[u], "Mauvaise réponse");
+                toutesBonnes = false;
+            }
+        }
+
+        console.log(tabs)  
+
+        contentDivParentFoodz.insertBefore(listesFoodz, input_foodz)
         "initVal:", initVal;
         } else { return false }
 
     });
-    
-    console.log(tableur)
-
+        console.log(tableur) 
 }
