@@ -94,18 +94,18 @@ btn[i].addEventListener('click', function clikcord(){
 
         let toutesBonnes = true;
 
-        for (let u = 0; u < tableur.length; u = u + 1) {
+        listesFoodz.innerText = tabObj_nom[i];
 
+        for (let u = 0; u < tableur.length; u = u + 1) {
             // Drapeau pour suivre si tout est correct
-                listesFoodz.innerText = tabObj_nom[i];
-            if(tableur[u] == tabs[u]){
-                console.log(tableur[u], tabs[u], "Bonne réponse");
+            if(tableur[u] === tabs[u]){
+                console.log(tableur[u], tabs[u], "Bonne réponse"); 
             } else {
                 console.log(tableur[u], tabs[u], "Mauvaise réponse");
                 toutesBonnes = false;
-            }
+            } 
         }
-
+        
         console.log(tabs)  
 
         contentDivParentFoodz.insertBefore(listesFoodz, input_foodz)
@@ -114,4 +114,5 @@ btn[i].addEventListener('click', function clikcord(){
 
     });
         console.log(tableur) 
+        
 }
